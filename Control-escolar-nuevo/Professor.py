@@ -35,6 +35,8 @@ class Professor():
 
 prof = Professor('Alfonso Gutierrez', 12358, (2019,3,21))
 Professors.append(prof)
+prof = Professor('Alfonso Gutierrez', 12358, (2019,3,21))
+Professors.append(prof)
 
     
         

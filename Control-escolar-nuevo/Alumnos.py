@@ -1,9 +1,9 @@
 from datetime import date
 
-Students = []
+Students = list()
 class Student:
 
-    def __init__(self, name:str, id:int, date_birth:date, registration_date:date, gender:str, city:str):
+    def __init__(self, name="", id="", date_birth="", registration_date="", gender="", city=""):
 
         self.name = name
         self.id = id
@@ -58,20 +58,49 @@ class Student:
     
     @City.setter
     def City(self, value):
-        self.City = value
+        self.city = value
+            
+    def AddStudent(self,):
+        student = Student()
+        print('To add a student to the list of students, please enter the following information: ')
+        student.name = input('Name: ')
+        student.id = int(input('ID: '))
+        print('\nDate birth: ')
+        year = int(input('Year: '))
+        month = int(input('Month:'))
+        day = int(input('Day: '))
+        student.date_birth = date(year, month, day)
+        print('\nDate of the registration: ')
+        year = int(input('Year: '))
+        month = int(input('Month: '))
+        day= int(input('Day: '))
+        student.registration_date = date(year, month, day)
+        student.gender = input('Gender (M/F): ')
+        student.city = input('City: ')
+        Students.append(student) 
 
     def Show(self):
+        print('Name |\t ID |\t Date Birth |\t Registration Date |\t Gender |\t City')
         for students in Students:
-            return f'{students.name} / {students.id} / {students.date_birth} / {students.registration_date} / {students.gender} / {students.city}'
-            
-#Esto no se ejecuta como debería, no llena la lista
-    def RegisteredStudent(self):
-        student = Student('Alma', 15648, (2002,6,13), (2021,5,21), 'M', 'Tala, Jalisco')
-        Students.append(student)
-        student = Student('Miguel', 15648, (2002,6,13), (2021,5,21), 'M', 'Tala, Jalisco')
-        Students.append(student)
-    
-student = Student('Miguel', 15648, (2002,6,13), (2021,5,21), 'M', 'Tala, Jalisco')
-Students.append(student)
+            print (f'{students.name} \t {students.id} \t {students.date_birth} \t {students.registration_date} \t\t   {students.gender} \t {students.city}')
 
-print(student.Show())
+
+student_ = Student('Alma', 154, (2002,6,13), (2021,5,21), 'M', 'Tala, Jalisco')
+Students.append(student_)
+student_ = Student('Miguel', 15648, (2002,6,13), (2021,5,21), 'M', 'Tala, Jalisco')
+Students.append(student_)
+
+
+
+# student = Student()
+# Students.append(student)
+# op = 1
+# while op != 0:
+#     print('1. Add Student')
+#     print('2. Show Student')
+#     op = int(input('Enter an option of the following sentences: '))
+
+#     if op == 1:
+#         student.AddStudent()
+#     elif op == 2:
+#         student.Show()
